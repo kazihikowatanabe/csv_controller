@@ -2,13 +2,7 @@
 <p>Find me in app/views/csv_controller/import.html.erb</p>
 <p>CSVファイルをインポートします</p>
 
-<div class="panel panel-default">
-  <div class="panel-body">
-    <%= form_tag(:method => :post, multipart: true) do %>
-      <div class="form-group">
-        <%= file_field_tag :csv_file %>
-      </div>
-      <%= submit_tag "CSVインポート", :class => "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
+<%= form_tag(import_stocks_path, multipart: true) do %>
+	<%= file_field_tag :file %>
+	<%= submit_tag "CSVインポート" %>
+<% end %>
